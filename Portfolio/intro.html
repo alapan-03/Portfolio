@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda&family=Heebo&display=swap" rel="stylesheet">
+
+    <style>   
+         body {
+        transition:opacity .4s ease-in-out, transform 1s ease-in-out;
+
+    }
+    .hidden {
+        opacity: 0;
+        transform: scale(3.8);    }
+
+
+        body{
+            background-color: rgb(15, 15, 15);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            font-family: 'Bodoni Moda', serif;
+font-family: 'Heebo', sans-serif;
+        }
+        .loader {
+  display: flex;
+  align-items: center;
+}
+
+
+
+.bar {
+  display: inline-block;
+  width: 3px;
+  height: 20px;
+  background-color: rgba(255, 255, 255, .5);
+  border-radius: 10px;
+  animation: scale-up4 1s linear infinite;
+}
+
+.bar:nth-child(2) {
+  height: 35px;
+  margin: 0 5px;
+  animation-delay: .25s;
+}
+
+.bar:nth-child(3) {
+  animation-delay: .5s;
+}
+
+@keyframes scale-up4 {
+  20% {
+    background-color: #ffff;
+    transform: scaleY(1.5);
+  }
+
+  40% {
+    transform: scaleY(1);
+  }
+}
+    </style>
+</head>
+<body>
+
+<div class="three-dots">
+    
+</div>
+
+    <div class="loader" style="display: flex; justify-content: center;align-items: center;" >
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+    <p style="color: white; letter-spacing: 1px;">Design by Alapan Kar</p>
+
+    <script>
+       setTimeout(function() {
+            // Add a class to the body to trigger the fade-out transition
+            document.body.classList.add('hidden');
+            
+            // Redirect to the main page after the transition completes (1 second)
+            setTimeout(function() {
+                window.location.href = 'portf.html';
+            }, 1000); // 1000 milliseconds = 1 second
+        }, 5000); 
+    </script>
+</body>
+</html>
